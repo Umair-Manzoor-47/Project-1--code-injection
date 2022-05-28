@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "chow.csnet.uccs.edu secure web site"
+AuthUserFile /var/www/data/apacheticket
+require valid-user

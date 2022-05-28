@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Get Member App List</title>
+
+<link rel="stylesheet" href="../csnet.css" type="text/css" />
+
+<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+
+<script>
+$(function() {
+   $.get("../php/getAppList.php?key=Uc2013lions", function(data) {
+
+			$('#CSVSource').html('<pre>' + data + '</pre>');
+      var index;
+      var arr;
+      var htext="<table border=\"2\" class=\"alternate\">\n";
+      arr=data.split("\n");                      
+      for (index=0; index < arr.length-1; ++index) {
+         var ar;
+         var i;
+         htext +="<tr>\n";
+         ar=arr[index].split(",");
+         for (i=0; i<ar.length; ++i) {
+            htext += "<td>"+ar[i]+"</td>";
+         }
+         htext +="\n</tr>\n";
+      }
+      htext +="</table>\n";
+      
+   			$('#CSVTable').html(htext);
+		});
+	});
+/*
+	$(function() {
+		$.get('https://cs5030.csnet.uccs.edu/php/getAppList.php?key=Uc2013lions', function(data) {
+			$('#CSVSource').html('<pre>' + data + '</pre>');
+		});
+		$('#CSVTable').CSVToTable('https://cs5030.csnet.uccs.edu/php/getAppList.php?key=Uc2013lions', { loadingImage: 'images/loading.gif', startLine: 0 });
+		});;
+	});
+*/
+	</script>
+</head>
+<body>
+Retrieve member database table data in CSV format.
+<div id="CSVSource" class="source">
+</div>
+
+<br><br>
+CSV To Table:<br>
+<div id="CSVTable">
+
+</div>
+
+</body>
+</html>

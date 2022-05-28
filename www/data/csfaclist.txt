@@ -1,0 +1,3 @@
+"graduate study committee"	gsc	#g00sc$	gsc@uccs.edu
+Edward Chow	chow	#ch00ow$	cchow@uccs.edu
+"Wu Sha"	ws	#wu11sh$	cs301@cs.uccs.edu

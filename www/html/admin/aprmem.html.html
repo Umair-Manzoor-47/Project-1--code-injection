@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Documents/cs/cs5530/html/src/www/html/admin/aprmem.html.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="html">
+<meta name="settings" content="use_css,number_lines">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+.lnr { color: #af5f00; }
+.Special { color: #c000c0; }
+.Title { color: #c000c0; }
+.Constant { color: #c00000; }
+.Type { color: #008000; }
+.Statement { color: #af5f00; }
+.Identifier { color: #008080; }
+.Comment { color: #0000c0; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="lnr"> 1 </span><span class="Comment">&lt;!DOCTYPE html&gt;</span>
+<span class="lnr"> 2 </span><span class="Identifier">&lt;</span><span class="Statement">html</span><span class="Identifier"> </span><span class="Type">lang</span><span class="Identifier">=</span><span class="Constant">&quot;en&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 3 </span><span class="Identifier">&lt;</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 4 </span><span class="Identifier">&lt;</span><span class="Statement">meta</span><span class="Identifier"> </span><span class="Type">charset</span><span class="Identifier">=</span><span class="Constant">&quot;utf-8&quot;</span><span class="Identifier"> /&gt;</span>
+<span class="lnr"> 5 </span><span class="Identifier">&lt;</span><span class="Statement">title</span><span class="Identifier">&gt;</span><span class="Title">Approve Member App List</span><span class="Identifier">&lt;/</span><span class="Statement">title</span><span class="Identifier">&gt;</span>
+<span class="lnr"> 6 </span>
+<span class="lnr"> 7 </span><span class="Identifier">&lt;</span><span class="Statement">link</span><span class="Identifier"> </span><span class="Type">rel</span><span class="Identifier">=</span><span class="Constant">&quot;stylesheet&quot;</span><span class="Identifier"> </span><span class="Type">href</span><span class="Identifier">=</span><span class="Constant">&quot;../csnet.css&quot;</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text/css&quot;</span><span class="Identifier"> /&gt;</span>
+<span class="lnr"> 8 </span>
+<span class="lnr"> 9 </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">type</span><span class="Identifier">=</span><span class="Constant">&quot;text/javascript&quot;</span><span class="Identifier"> </span><span class="Type">src</span><span class="Identifier">=</span><span class="Constant">&quot;../js/jquery-1.11.1.min.js&quot;</span><span class="Identifier">&gt;</span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">10 </span>
+<span class="lnr">11 </span><span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">12 </span><span class="Special">$</span>(<span class="Identifier">function</span>()<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">13 </span><span class="Special">   $.get</span>(<span class="Constant">&quot;../php/getAppList.php?key=Uc2013lions&quot;</span><span class="Special">, </span><span class="Identifier">function</span>(<span class="Special">data</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">14 </span>
+<span class="lnr">15 </span><span class="Special">                        $</span>(<span class="Constant">'#CSVSource'</span>)<span class="Special">.html</span>(<span class="Constant">'&lt;pre&gt;'</span><span class="Special"> + data + </span><span class="Constant">'&lt;/pre&gt;'</span>)<span class="Special">;</span>
+<span class="lnr">16 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> index;</span>
+<span class="lnr">17 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> arr;</span>
+<span class="lnr">18 </span><span class="Special">      </span><span class="Identifier">var</span><span class="Special"> htext=</span><span class="Constant">&quot;&lt;form name=</span><span class="Special">\&quot;</span><span class="Constant">approveMember</span><span class="Special">\&quot;</span><span class="Constant">&gt;&lt;table border=</span><span class="Special">\&quot;</span><span class="Constant">2</span><span class="Special">\&quot;</span><span class="Constant"> class=</span><span class="Special">\&quot;</span><span class="Constant">alternate</span><span class="Special">\&quot;</span><span class="Constant">&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">;</span>
+<span class="lnr">19 </span><span class="Special">      arr=data.split</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>)<span class="Special">;                      </span>
+<span class="lnr">20 </span><span class="Special">      </span><span class="Statement">for</span><span class="Special"> </span>(<span class="Special">index=</span>0<span class="Special">; index &lt; arr.length</span>-1<span class="Special">; ++index</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">21 </span><span class="Special">         </span><span class="Identifier">var</span><span class="Special"> ar;</span>
+<span class="lnr">22 </span><span class="Special">         </span><span class="Identifier">var</span><span class="Special"> i;</span>
+<span class="lnr">23 </span><span class="Special">         htext +=</span><span class="Constant">&quot;&lt;tr&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">;</span>
+<span class="lnr">24 </span><span class="Special">         ar=arr</span><span class="Identifier">[</span><span class="Special">index</span><span class="Identifier">]</span><span class="Special">.split</span>(<span class="Constant">&quot;,&quot;</span>)<span class="Special">;</span>
+<span class="lnr">25 </span><span class="Special">         </span><span class="Statement">for</span><span class="Special"> </span>(<span class="Special">i=</span>0<span class="Special">; i&lt;ar.length; ++i</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">26 </span><span class="Special">            htext += </span><span class="Constant">&quot;&lt;td&gt;&quot;</span><span class="Special">+ar</span><span class="Identifier">[</span><span class="Special">i</span><span class="Identifier">]</span><span class="Special">+</span><span class="Constant">&quot;&lt;/td&gt;&quot;</span><span class="Special">;</span>
+<span class="lnr">27 </span><span class="Special">         </span><span class="Identifier">}</span>
+<span class="lnr">28 </span><span class="Special">         </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">index == </span>0)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">29 </span><span class="Special">            htext += </span><span class="Constant">&quot;&lt;td colspan=</span><span class="Special">\&quot;</span><span class="Constant">2</span><span class="Special">\&quot;</span><span class="Constant">&gt;Membership Application Decision&lt;/d&gt;&quot;</span><span class="Special">;</span>
+<span class="lnr">30 </span><span class="Special">         </span><span class="Identifier">}</span><span class="Special"> </span><span class="Statement">else</span><span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">31 </span><span class="Special">            htext +=</span><span class="Constant">&quot;&lt;td&gt;&lt;input type=</span><span class="Special">\&quot;</span><span class="Constant">button</span><span class="Special">\&quot;</span><span class="Constant"> class=</span><span class="Special">\&quot;</span><span class="Constant">shinygreen</span><span class="Special">\&quot;</span><span class="Constant"> value=</span><span class="Special">\&quot;</span><span class="Constant">accept</span><span class="Special">\&quot;</span><span class="Constant"> onclick=</span><span class="Special">\&quot;</span><span class="Constant">sendAction(this);</span><span class="Special">\&quot;</span><span class="Constant">&gt;&lt;/td&gt;&quot;</span><span class="Special">;</span>
+<span class="lnr">32 </span><span class="Special">            htext +=</span><span class="Constant">&quot;&lt;td&gt;&lt;input type=</span><span class="Special">\&quot;</span><span class="Constant">button</span><span class="Special">\&quot;</span><span class="Constant"> class=</span><span class="Special">\&quot;</span><span class="Constant">shinyred</span><span class="Special">\&quot;</span><span class="Constant"> value=</span><span class="Special">\&quot;</span><span class="Constant">reject</span><span class="Special">\&quot;</span><span class="Constant"> onclick=</span><span class="Special">\&quot;</span><span class="Constant">sendAction(this);</span><span class="Special">\&quot;</span><span class="Constant">&gt;&lt;/td&gt;&quot;</span><span class="Special">;</span>
+<span class="lnr">33 </span><span class="Special">            </span><span class="Comment">//htext +=&quot;&lt;td&gt;&lt;button class=\&quot;shinygreen\&quot; name=\&quot;command\&quot;&gt;accept&lt;/button&gt;&lt;/td&gt;&quot;;</span>
+<span class="lnr">34 </span><span class="Special">            </span><span class="Comment">//htext +=&quot;&lt;td&gt;&lt;button class=\&quot;shinyred\&quot; name=\&quot;command\&quot;&gt;reject&lt;/button&gt;&lt;/td&gt;&quot;;</span>
+<span class="lnr">35 </span><span class="Comment">//button tag specifies the label as textNode not as value</span>
+<span class="lnr">36 </span><span class="Special">         </span><span class="Identifier">}</span>
+<span class="lnr">37 </span><span class="Special">         htext+=</span><span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&lt;/tr&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">;</span>
+<span class="lnr">38 </span><span class="Special">      </span><span class="Identifier">}</span>
+<span class="lnr">39 </span><span class="Special">      htext +=</span><span class="Constant">&quot;&lt;/table&gt;&lt;/form&gt;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">;</span>
+<span class="lnr">40 </span><span class="Special">      </span>
+<span class="lnr">41 </span><span class="Special">        $</span>(<span class="Constant">'#CSVTable'</span>)<span class="Special">.html</span>(<span class="Special">htext</span>)<span class="Special">;</span>
+<span class="lnr">42 </span><span class="Special">    </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">43 </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">44 </span>
+<span class="lnr">45 </span><span class="Identifier">function</span><span class="Special"> sendAction</span>(<span class="Special">item</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">46 </span><span class="Special">   </span><span class="Identifier">var</span><span class="Special"> re = </span><span class="Constant">/^\&quot;(.+)\&quot;$/</span><span class="Special">;</span>
+<span class="lnr">47 </span><span class="Special">   </span><span class="Identifier">var</span><span class="Special"> emailstr = item.parentNode.parentNode.children</span><span class="Identifier">[</span>2<span class="Identifier">]</span><span class="Special">.textContent.replace</span>(<span class="Special">re,</span><span class="Constant">&quot;$1&quot;</span>)<span class="Special">;  </span><span class="Comment">//strip &quot;</span>
+<span class="lnr">48 </span><span class="Special">   </span><span class="Identifier">var</span><span class="Special"> request=</span><span class="Constant">&quot;../php/action.php?key=Uc2013lions&amp;command=&quot;</span><span class="Special">+item.value+</span><span class="Constant">&quot;&amp;email=&quot;</span><span class="Special">+emailstr;</span>
+<span class="lnr">49 </span><span class="Special">   $</span>(<span class="Constant">&quot;#request&quot;</span>)<span class="Special">.html</span>(<span class="Constant">&quot;send request=&quot;</span><span class="Special">+request+</span><span class="Constant">&quot;...&quot;</span>)<span class="Special">;</span>
+<span class="lnr">50 </span><span class="Special">   $.get</span>(<span class="Special">request, </span><span class="Identifier">function</span>(<span class="Special">data</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">51 </span><span class="Special">      $</span>(<span class="Constant">&quot;#response&quot;</span>)<span class="Special">.html</span>(<span class="Special">data</span>)<span class="Special">;</span>
+<span class="lnr">52 </span><span class="Special">   </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">53 </span><span class="Identifier">}</span>
+<span class="lnr">54 </span><span class="Comment">// the following statement does not seem to work</span>
+<span class="lnr">55 </span><span class="Special">$</span>(<span class="Constant">&quot;input[type=</span><span class="Special">\&quot;</span><span class="Constant">button</span><span class="Special">\&quot;</span><span class="Constant">]&quot;</span>)<span class="Special">.click</span>(<span class="Identifier">function</span>()<span class="Special"> </span><span class="Identifier">{</span>
+<span class="lnr">56 </span><span class="Special">   </span><span class="Comment">//alert(&quot;thisTextContent&quot;+$(this).textContent);</span>
+<span class="lnr">57 </span><span class="Special">   </span><span class="Comment">//$(&quot;#msg&quot;).textContent = $(this).attr(&quot;name&quot;)+&quot;=&quot;+$(this).textContent+&quot;?email=&quot;+$(this).parentNode.parentNode.children[2].textContent;</span>
+<span class="lnr">58 </span><span class="Special">   $</span>(<span class="Constant">&quot;#msg&quot;</span>)<span class="Special">.html</span>(<span class="Constant">&quot;set url with command to server&quot;</span>)<span class="Special">;</span>
+<span class="lnr">59 </span><span class="Special">   </span><span class="Comment">//$(this).formaction=&quot;../php/action.php?command=accept?email=&quot;+$(this).parentNode.parentNode.children[2].textContent;</span>
+<span class="lnr">60 </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="lnr">61 </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="lnr">62 </span><span class="Identifier">&lt;/</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="lnr">63 </span><span class="Identifier">&lt;</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="lnr">64 </span>Retrieve member database table data in CSV format.
+<span class="lnr">65 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;CSVSource&quot;</span><span class="Identifier"> </span><span class="Type">class</span><span class="Identifier">=</span><span class="Constant">&quot;source&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr">66 </span><span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">67 </span>
+<span class="lnr">68 </span><span class="Identifier">&lt;</span><span class="Statement">br</span><span class="Identifier">&gt;&lt;</span><span class="Statement">br</span><span class="Identifier">&gt;</span>
+<span class="lnr">69 </span>CSV To Table:<span class="Identifier">&lt;</span><span class="Statement">br</span><span class="Identifier">&gt;</span>
+<span class="lnr">70 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;CSVTable&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr">71 </span><span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">72 </span>
+<span class="lnr">73 </span>request:
+<span class="lnr">74 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;request&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr">75 </span><span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">76 </span>
+<span class="lnr">77 </span>response:
+<span class="lnr">78 </span><span class="Identifier">&lt;</span><span class="Statement">div</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;response&quot;</span><span class="Identifier">&gt;</span>
+<span class="lnr">79 </span><span class="Identifier">&lt;/</span><span class="Statement">div</span><span class="Identifier">&gt;</span>
+<span class="lnr">80 </span>
+<span class="lnr">81 </span><span class="Identifier">&lt;/</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="lnr">82 </span><span class="Identifier">&lt;/</span><span class="Statement">html</span><span class="Identifier">&gt;</span>
+</pre>
+</body>
+</html>

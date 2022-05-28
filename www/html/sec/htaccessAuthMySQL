@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "cs526rs1.csnet.uccs.edu secure web site using MySQL authenticate zone"
+AuthMySQLEnable on
+AuthMySQLUser chow
+AuthMySQLPassword #Uc2013lions$
+AuthMySQLDB chowdb
+AuthMySQLUserTable member1
+AuthMySQLNameField email
+AuthMySQLPasswordField password
+AuthMySQLPwEncryption none
+require valid-user

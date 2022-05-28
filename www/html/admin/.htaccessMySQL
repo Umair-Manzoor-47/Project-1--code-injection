@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "cs591.csnet.uccs.edu secure admin web site using MySQL authentication"
+AuthMySQLEnable on
+AuthMySQLUser chow
+AuthMySQLPassword #Uc2013lions$
+AuthMySQLDB chowdb
+AuthMySQLUserTable admin
+AuthMySQLNameField login
+AuthMySQLPasswordField password
+AuthMySQLPwEncryption none
+require valid-user

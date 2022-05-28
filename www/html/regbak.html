@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>membership registration</title>
+<link href="csnet.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+function addMsg(text, item){
+ if (item.parentNode.lastChild.nodeName != "DIV") {
+   // not error msg before
+   var newMsg=document.createElement('div'); // nodeName is uppercase
+   newMsg.appendChild(document.createTextNode(text));
+   newMsg.style.backgroundColor="pink";
+   newMsg.style.color="red";
+   item.parentNode.appendChild(newMsg);
+ } else { // exist a previous error message  no need to display err msg
+ }
+}
+function removeMsg(item) {
+ if (item.parentNode.lastChild.nodeName == "DIV") {
+   item.parentNode.removeChild(item.parentNode.lastChild);
+ }
+}
+function checkAll() {
+   var isOK = true;
+   if (document.form1.email.value != document.form1.emailConfirmed.value) {
+    isOK = false; 
+    addMsg("email!=emailConfirm; please correct", document.form1.email);
+   } else { 
+     removeMsg(document.form1.email);
+   }
+   if (document.form1.password.value != document.form1.passwordConfirmed.value ) {
+    isOK = false; 
+    addMsg("password!=passwordConfirmed; please correct", document.form1.password);
+   } else {
+     removeMsg(document.form1.password);
+   }
+   return isOK;
+}
+</script>
+</head>
+<body>
+<h2>
+Here we are using <a href="http://www.w3.org/TR/html-markup/input.html">HTML5 new input type controls</a>.
+<br />
+Please enter the following registeration information:
+</h2>
+<table class="alternate"> 
+<form method="POST" autocomplete="on" name="form1"
+      action="https://cs591.csnet.uccs.edu/php/reg.php">
+<tr><td>Full Name:</td>
+<td>
+<input type="text" name="fullName" size="50" value="Porg Webb">
+</td></tr>
+<tr><td>Email:</td><td>
+<input type="text" name="email" size="50" 
+       value="cs3110@uccs.edu" onChange="checkAll();">
+</td></tr>  
+<tr><td>EmailConfirmed:</td><td>
+<input type="text" name="emailConfirmed" size="50" 
+       value="cs3110@uccs.edu" onChange="checkAll();">
+</td></tr>  
+<tr><td>Password:</td><td>
+<input type="password" name="password" required="required"  size="50" 
+       value="cs07web" onChange="checkAll();">
+</td></tr>  
+<tr><td>PasswordConfirmed:</td><td>
+<input type="password" name="passwordConfirmed" required="required"  size="50" 
+       value="cs07web" onChange="checkAll();">
+</td></tr>  
+</table>
+<input type="submit" name="submit" value="register" onClick="return checkAll();">
+</form>
+</body>
+</html>

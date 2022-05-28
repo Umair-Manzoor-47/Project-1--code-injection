@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Get All  Member List</title>
+
+<link rel="stylesheet" href="../csnet.css" type="text/css" />
+
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+
+<script>
+$(function() {
+   $.get("../php/getAll.php?key=Uc2013lions", function(data) {
+
+			$('#CSVSource').html('<pre>' + data + '</pre>');
+      var index;
+      var arr;
+      var htext="<form name=\"approveMember\"><table border=\"2\" class=\"alternate\">\n";
+      arr=data.split("\n");                      
+      for (index=0; index < arr.length-1; ++index) {
+         var ar;
+         var i;
+         htext +="<tr>\n";
+         ar=arr[index].split(",");
+         for (i=0; i<ar.length; ++i) {
+            htext += "<td>"+ar[i]+"</td>";
+         }
+         if (index == 0) {
+            htext += "<td colspan=\"2\">Membership Status Change</d>";
+         } else {
+            htext +="<td><input type=\"button\" class=\"shinygreen\" value=\"accept\" onclick=\"sendAction(this);\"></td>";
+            htext +="<td><input type=\"button\" class=\"shinyred\" value=\"reject\" onclick=\"sendAction(this);\"></td>";
+            //htext +="<td><button class=\"shinygreen\" name=\"command\">accept</button></td>";
+            //htext +="<td><button class=\"shinyred\" name=\"command\">reject</button></td>";
+//button tag specifies the label as textNode not as value
+         }
+         htext+="\n</tr>\n";
+      }
+      htext +="</table></form>\n";
+      
+  	$('#CSVTable').html(htext);
+    });
+});
+
+function sendAction(item) {
+   var re = /^\"(.+)\"$/;
+   var emailstr = item.parentNode.parentNode.children[2].textContent.replace(re,"$1");  //strip "
+   var request="../php/action.php?key=Uc2013lions&command="+item.value+"&email="+emailstr;
+   $("#request").html("send request="+request+"...");
+   $.get(request, function(data) {
+      $("#response").html(data);
+   });
+}
+// the following statement does not seem to work
+$("input[type=\"button\"]").click(function() {
+   //alert("thisTextContent"+$(this).textContent);
+   //$("#msg").textContent = $(this).attr("name")+"="+$(this).textContent+"?email="+$(this).parentNode.parentNode.children[2].textContent;
+   $("#msg").html("set url with command to server");
+   //$(this).formaction="../php/action.php?command=accept?email="+$(this).parentNode.parentNode.children[2].textContent;
+});
+</script>
+</head>
+<body>
+Retrieve member database table data in CSV format.
+<div id="CSVSource" class="source">
+</div>
+
+<br><br>
+CSV To Table:<br>
+<div id="CSVTable">
+</div>
+
+request:
+<div id="request">
+</div>
+
+response:
+<div id="response">
+</div>
+
+</body>
+</html>

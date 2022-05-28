@@ -1,0 +1,16 @@
+For Fedora Core with SELinux turn on,  make sure to perform the following chcon commands.
+
+change midterm from httpd_sys_content_t  to httpd_sys_rw_content_t
+chcon -R -t httpd_sys_rw_content_t midterm
+
+same for gsc  and studentproj
+chcon -R -t httpd_sys_rw_content_t gsc
+chcon -R -t httpd_sys_rw_content_t studentproj
+
+For AWS Linux instance where the selinxu is disabled,
+we need to simply change the traditional Unix directory access rights
+of these three directories to be owned by apache and rwx by apache.
+
+sudo bash
+chown -R apache:apache midterm gsc studentproj
+chmod -R 755 midterm gsc studentproj

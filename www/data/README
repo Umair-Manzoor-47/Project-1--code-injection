@@ -1,0 +1,15 @@
+cd /var/www/data
+mysql/createacc.pl cs00net chow "#Uc2013lions$"
+mysql -u root -pcs00net chowdb < admin.sql
+mysql -u root -pcs00net chowdb < member1.sql
+mysql -u root -pcs00net chowdb < cs591.sql
+
+# to allow read and append new student to the upload web site access list.
+#graduationList.txt need to writable by apache
+chown apache:apache graduationList.txt
+
+The following are needed for Fedora Core Linux.  If you are running on AWS Linux, you do not need to execute the chcon commands
+
+chcon -t httpd_sys_rw_content_t graduationList.txt 
+#need to change graduationList.txt to httpd_sys_rw_content_t from 
+#httpd_sys_content_t

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "chow.csnet.uccs.edu secure web site"
+AuthUserFile /var/www/html/apacheticket
+require user csnet cs3110 uccs

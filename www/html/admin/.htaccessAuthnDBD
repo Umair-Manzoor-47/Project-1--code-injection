@@ -1,0 +1,22 @@
+DBDriver pgsql
+DBDParams "dbname=chowdb user=chow password=#Uc2013lions$"
+DBDMin  4
+DBDKeep 8
+DBDMax  20
+DBDExptime 300
+
+AuthType Basic
+AuthName "cs591.csnet.uccs.edu secure admin web site using MySQL authentication"
+
+# To cache credentials, put socache ahead of dbd here
+#AuthBasicProvider socache dbd
+AuthBasicProvider dbd
+
+# Also required for caching: tell the cache to cache dbd lookups!
+#AuthnCacheProvideFor dbd
+#AuthnCacheContext my-server
+
+require valid-user
+
+# mod_authn_dbd SQL query to authenticate a user
+AuthDBDUserPWQuery "SELECT password FROM admin WHERE login = %s"

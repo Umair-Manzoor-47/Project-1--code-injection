@@ -1,0 +1,1 @@
+change from public_content_rw_t  to chcon -R -t httpd_sys_content_rw_t CS526

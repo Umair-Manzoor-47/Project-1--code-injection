@@ -1,0 +1,12 @@
+AuthType Basic
+AuthName "chow.csnet.uccs.edu secure web site"
+AuthMySQLEnable on
+AuthMySQLUser chow
+AuthMySQLPassword #Uc2013lions$
+AuthMySQLDB chowdb
+AuthMySQLUserTable member2
+AuthMySQLGroupField groups
+AuthMySQLNameField email
+AuthMySQLPasswordField password
+AuthMySQLPwEncryption none
+require group bronze

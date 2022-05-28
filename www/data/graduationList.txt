@@ -1,0 +1,6 @@
+Name	Login	SID
+"Chow, Edward"	chow	999110088
+"GRAY, JUST"	jgray	999110066
+"chow"	csnet	111222333
+"chow"	cs5530	111222333
+"cs3110"	cs3110	111222333

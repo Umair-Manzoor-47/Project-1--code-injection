@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Network Security at UCCS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+body  {
+background-image:url(images/uccsSeal.gif);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: bottom right;
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+ns4 = (document.layers)? true:false
+ie = (document.all)? true:false;
+
+programs ="We offer the following related degree programs and certificate:<ul>\
+<li><a href=\"http://eas.uccs.edu/cs/meia.shtml\">Master of Engineering in Information Assurance </a> \
+<li><a href=\"http://eas.uccs.edu/cs/certificate_ia.shtml\">Certificate in Information Assurance </a> \
+<li><a href=\"http://eas.uccs.edu/cs/phd_engr_cs.shtml\">Ph.D in Engineeering with Emphasis on Computer Science</a> \
+<li><a href=\"http://eas.uccs.edu/cs/phd_engr_sec.shtml\">Ph.D in Engineeering with Emphasis on Security</a> \
+<li><a href=\"http://eas.uccs.edu/cs/mscs.shtml\">Master of Science in Computer Science</a> \
+<li><a href=\"http://eas.uccs.edu/cs/mese.shtml\">Master of Engineering in Software Engineering</a> \
+</ul>";
+
+research = "We are currently working on the following projects:<ul>\
+<li><a href=\"http://cs.uccs.edu/~infofuse/\">Information Fusion for Enterprise Intrusion Detection and Handling.</a> \
+<li><a href=\"http://cs.uccs.edu/~infoshare/\">Secure Information Sharing.</a> \
+<li><a href=\"http://cs.uccs.edu/~scold/\">Secure Collective Network Defense.</a> \
+<li><a href=\"http://cs.uccs.edu/~smanet/\">Secure Mobile Ad Hoc Netowrk.</a> \
+<li><a href=\"http://cs.uccs.edu/~sgfr/\">Secure Groupware for First Responsders.</a> \
+<li><a href=\"http://cs.uccs.edu/~frsn/\">First Responder Sensor Network.</a> \
+</ul>";
+
+courses ="We offer the following network security related courses:<ul>\
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS692.desc\">CS 692-3. Advanced Topics in Network Security</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS691.desc\">CS 691-3. Advanced System Security Design</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS592.desc\">CS 592-3. Applied Cryptography for Secure Communication</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS591.desc\">CS 591-3. Fundamentals of Computer/Network Security</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS526.desc\">CS 526-3. Advanced Internet and Web Systems</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS522.desc\">CS 522-3. Computer Communications</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS622.desc\">CS 622-3. Distributed Networks</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS526.desc\">CS 526-3. Advanced Internet and Web Systems</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS550.desc\">CS 550-3. Operating System</a> \
+<li><a href=\"http://www.uccs.edu/~course/courses/descriptions/CS551.desc\">CS 551-3. Operating System II</a> \
+</ul>";
+
+
+faculty = "The facult members working on network security issues are:<ul>\
+<li><a href=\"http://www.cs.uccs.edu/~tboult/\">Terry Boult, El Pomar Endowed Chair of Communication and Computation and Professor of Computer Science</a><br>Wireless/Sensor Network Security; Physical Security \
+<li><a href=\"http://www.cs.uccs.edu/~chow/\">C. Edward Chow, Professor of Computer Science</a><br>Network Security; Intrusion Tolerance; Distributed Intrusion Detection/Handling; Secure Information Sharing; Secure Groupware for First Responders; Secure MANET \
+<li><a href=\"http://www.cs.uccs.edu/~zbo/\">Xiabo Zhou, Associate Professor of Computer Science</a><br>Degrading DDoS defense; Information Fusion \
+<li><a href=\"http://www.cs.uccs.edu/~cyue/\">Chuan Yue, Assistant Professor of Computer Science</a><br>Web System Security; Cryptography \
+<li><a href=\"http://www.cs.uccs.edu/~kalita/\">Jugal Kalita, Professor of Computer Science</a><br>Artificial Intelligence; Data Mining \
+<li><a href=\"http://owl.uccs.edu/~mfa/\">Maria Augusteijn, Professor of Computer Science</a><br>Neural Netowrk for Intrusion Detection and Information Fusion \
+<li><a href=\"http://www.cs.uccs.edu/~cdash/\">Charles M. Shub, Professor of Computer Science</a><br>Operating System Security; Simulation \
+<li><a href=\"http://www.cs.uccs.edu/~chamillard/\">Tim Chamillard, Associate Professor of Computer Science</a><br>Security in Software Engineering; Physical Security; Steganography \
+<li><a href=\"http://www.cs.uccs.edu/~rlewis/\">Rory Lewis, Assistant Professor of Computer Science</a><br>Information Retrieval; Knowledge Discovery in Databases (KDD) \
+<li><a href=\"http://cs.eas.uccs.edu/fac/Faculty.htm\">Other faculty members in Computer Science</a> \
+</ul>";
+ 
+
+
+
+
+function changeContent(value) {
+     var id0=document.getElementById('id0');
+        if (value == 1)        
+           id0.innerHTML = programs;
+        else if (value == 2) 
+           id0.innerHTML = research;
+        else if (value == 3) 
+           id0.innerHTML = faculty;
+        else if (value == 4) 
+           window.location.href = "http://eas.uccs.edu/cs/";
+        else if (value == 5) 
+           window.location.href  = "http://eas.uccs.edu/";
+        else if (value == 6) 
+           window.location.href  = "http://www.uccs.edu/";
+        else if (value == 7) 
+           id0.innerHTML = courses;
+        else 
+           id0.innerHTML = "<a href='dhtmlnn.html'>link2.1</a><BR><a href='d2.html'>link2.2</a><BR><a href='d3.html'>link2.3</a>";
+    if (ns4) { 
+        var lyr = document.layers["id1"].document;
+        
+        lyr.open();
+        if (value == 1)
+           lyr.write("<a href='dhtml.html'>link1.1</a><BR><a href='d2.html'>link1.2</a>");
+        else 
+           lyr.write("<a href='dhtmlnn.html'>link2.1</a></a><BR><a href='d2.html'>link2.2</a><BR><a href='d3.html'>link2.3</a>");
+        lyr.close();
+     }
+}
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" onLoad="changeContent(1)">
+<form name="form1" method="post" action="">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">walrus.uccs.edu<br />
+    <img src="images/uccsSealTransparent2.png"><br>
+    <input type="button" name="Submit" value="Programs" style="width:150" onClick="changeContent(1)"><br>
+    <input type="button" name="Submit2" value="Research Projects" style="width:150" onClick="changeContent(2)"><br>
+    <input type="button" name="Submit2" value="Courses" style="width:150" onClick="changeContent(7)"><br>
+    <input type="button" name="Submit3" value="Faculty" style="width:150" onClick="changeContent(3)"><br>
+    <input type="button" name="Submit4" value="CS Department" style="width:150" onClick="changeContent(4)"><br>
+    <input type="button" name="Submit42" value="EAS College" style="width:150" onClick="changeContent(5)"><br>
+    <input type="button" name="Submit422" value="UCCS" style="width:150" onClick="changeContent(6)"></td>
+<td>
+  <table><tr>
+    <td><img src="images/cyberResearchLogoV2.png" width="935" height="146"></td>
+    </tr>
+    <tr>
+       <td><DIV ID="id0">
+           </DIV></td>
+    </tr>
+  </table>
+</td>
+  </tr>
+</table>
+</form>
+  <p>&nbsp; </p>
+</body>
+</html>

@@ -1,0 +1,7 @@
+http://httpd.apache.org/docs/2.4/mod/mod_authn_dbd.html
+http://www.helicontech.com/ape/doc/mod_authn_dbd.htm
+
+
+fc24 remove mod_auth_mysql replace with mod_authn_dbd
+
+

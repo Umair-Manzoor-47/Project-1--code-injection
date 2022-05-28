@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "chow.csnet.uccs.edu secure web site using MySQL group authenticate zone"
+AuthMySQLEnable on
+AuthMySQLUser ja
+AuthMySQLPassword wiki13leaks
+AuthMySQLDB jadb
+AuthMySQLUserTable member
+AuthMySQLNameField email
+AuthMySQLPasswordField password
+AuthMySQLPwEncryption none
+require valid-user
